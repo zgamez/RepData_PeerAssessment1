@@ -11,7 +11,7 @@ library(dplyr)
 library(tidyr)
 library(lattice)
 
-activity <- read.csv("activity.csv", header=TRUE, stringsAsFactors=FALSE)
+activity <- read.csv(unz("activity.zip", "activity.csv"), header=TRUE, stringsAsFactors=FALSE)
 activity$date <- as.POSIXct(activity$date, format="%Y-%m-%d")
 activity$dayofweek <- weekdays(activity$date, abbr = TRUE)
 ```
